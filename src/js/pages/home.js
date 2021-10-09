@@ -5,10 +5,10 @@ const landingPage = function(params) {
 
     const img = logo();
     const head = header();
-    const markup = img - head;
+    const markup = img + head;
     console.log(markup)
 
-    return null
+    return landingPage
 } 
 
 export default landingPage
