@@ -1,10 +1,7 @@
-const makeElement = function(templateContainer=[], _templateString=``){
-
-    templateElements =  templateContainer.map((templateString) => {
-        const documentFragment = document.createRange().createContextualFragment(templateString).children[0]
-    return documentFragment
-    })
+const makeElement = function(htmlString){
+    const frag = document.createRange().createContextualFragment(htmlString)
+    const elem = frag.children[0]
+    return elem
 }
 
-
-export default makeElement
+export {makeElement}

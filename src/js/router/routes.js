@@ -1,14 +1,13 @@
+import homePage from '../pages/home'
+import toDoPage from '../pages/toDoPage'
 
-import homePage from "./../pages/home";
-import toDoPage from "./../pages/todos";
-
-
-const routes = {
-    "/":homePage(),
-    "/todo":toDoPage()
-}
 
 const Router = (pathname) => {
+    const routes = {
+        "/":homePage(),
+        "/todo":toDoPage()
+    }
+
     const app = document.querySelector('#app');
     app.innerHTML = ''
     window.history.pushState(

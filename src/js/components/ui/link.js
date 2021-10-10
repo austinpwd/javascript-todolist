@@ -1,6 +1,5 @@
-
-import {Router} from './../../router/routes' 
-import { toElement } from '../../utils/toElement'
+import {Router} from '../../router/routes'
+import {makeElement} from '../../utils/makeElement'
  
 const link = function ( {title,  path, ...params} ){ 
     
@@ -11,7 +10,7 @@ const link = function ( {title,  path, ...params} ){
     }
     
   
-     let element = toElement( `<a class="link" href="${path}" data-path="${path}"">${title}</button>`)
+     let element = makeElement( `<a class="link" href="${path}" data-path="${path}"">${title}</button>`)
      element.addEventListener('click', clickHandler)
     return  element
 }

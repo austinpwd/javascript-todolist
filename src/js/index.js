@@ -1,7 +1,10 @@
-import homePage from './pages/home'
+import {Router} from "./router/routes";
+import link from "./components/ui/link";
 
-const homePage = function (){
-    const pageHeader = document.createElement('header')
- }
- 
- export default homePage
+const homePage = link({title: "Test", path: "/"});
+const toDoPage = link({ title: "todo page", path: "/todo"});
+
+const app = document.querySelector("#app");
+Router('/')
+app.appendChild(homePage);
+app.appendChild(toDoPage);
