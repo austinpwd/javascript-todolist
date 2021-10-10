@@ -1,9 +1,11 @@
 import homePage from '../pages/home'
 import toDoPage from '../pages/toDoPage'
+import pageNotFound from '../pages/pageNotFound'
 
 const routes = {
   "/":homePage(),
-  "/todo":toDoPage()
+  "/todo":toDoPage(),
+  undefined:pageNotFound()
 }
 
 
