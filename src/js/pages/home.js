@@ -1,14 +1,16 @@
 import logo from '../icons/logo'
 import header from '../components/brandingHeader'
 
-const landingPage = function(params) {
+function homePage(data) {
+    const markup = data.map((boilerplate, index) =>{
 
-    const img = logo();
-    const head = header();
-    const markup = img + head;
-    console.log(markup)
+        const img = logo();
+        const head = header();
+        console.log(markup)
+    
+        return boilerplate
+    })
+    return markup
+}
 
-    return landingPage
-} 
-
-export default landingPage
+export default homePage

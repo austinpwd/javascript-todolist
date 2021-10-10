@@ -1,7 +1,17 @@
-const makeElement = function(htmlString){
-    const frag = document.createRange().createContextualFragment(htmlString)
-    const elem = frag.children[0]
-    return elem
-}
+function makeElement (array=[]) {  
+    let newElements;
 
-export {makeElement}
+    if (array.length === 0){
+        throw new Error("Empty array")
+    }
+
+    newElements = array.map((templateStrings) => {
+        
+        const currentElement = document.createRange().createContextualFragment(templateStrings).children[0]
+        
+        return currentElement
+    })    
+    
+    return newElements
+}
+export default makeElement
