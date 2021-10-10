@@ -1,6 +1,14 @@
-const header = function (title="uiHeader", className="ui-header") {
-    const element = `<h1 class="${className}>${title}"</h1>`
-    return element
-}
+import logo from '../../icons/logo'
+import tagline from '../../components/ui/tagline'
+import makeElement from '../../utils/makeElement';
 
-export default header
+const brandingHeader = function(){
+    const newFragment = document.createDocumentFragment();
+
+    newFragment.appendChild(makeElement(logo()))
+    newFragment.appendChild(makeElement(tagline()))
+    return newFragment
+      
+ }
+ 
+ export default brandingHeader

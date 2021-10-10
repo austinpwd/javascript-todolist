@@ -1,14 +1,15 @@
-import logo from './../icons/logo'
-import header from './../components/header'
+import brandingHeader from '../components/brandingHeader'
+import makeElement from '../utils/makeElement'
+import link from '../components/ui/link'
 
-const landingPage = function(params) {
+const pageNotFound = function(){
 
-    const img = logo();
-    const head = header();
-    const markup = img - head;
-    console.log(markup)
+    const pageHeader = document.createElement('header')
+    pageHeader.appendChild((brandingHeader()))
+    pageHeader.appendChild(link("Go to To-Do List app", "/todo", ))
 
-    return null
-} 
-
-export default landingPage
+    return pageHeader
+      
+ }
+ 
+ export default pageNotFoumd

@@ -1,12 +1,14 @@
-import logo from '../icons/logo'
-import header from '../components/brandingHeader'
+import header from '../components/ui/header'
+import brandingHeader from '../components/brandingHeader'
 import makeElement from '../utils/makeElement'
+import link from '../components/ui/link'
 
-const homePage = function (params){
+const homePage = function(){
 
     const pageHeader = document.createElement('header')
-    pageHeader.appendChild(makeElement(logo()))
-    pageHeader.appendChild(makeElement(header()))
+    pageHeader.appendChild(makeElement((header())))
+    pageHeader.appendChild((brandingHeader()))
+    pageHeader.appendChild(link("Go to To-Do List app", "/todo", ))
 
     return pageHeader
       
