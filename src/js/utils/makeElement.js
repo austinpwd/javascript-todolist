@@ -1,17 +1,7 @@
-function makeElement (array=[]) {  
-    let newElements;
-
-    if (array.length === 0){
-        throw new Error("Empty array")
-    }
-
-    newElements = array.map((templateStrings) => {
-        
-        const currentElement = document.createRange().createContextualFragment(templateStrings).children[0]
-        
-        return currentElement
-    })    
-    
-    return newElements
+const makeElement = function (templateString=``){
+    const docFragment = document.createRange().createContextualFragment(templateString)
+    const element = docFragment.children[0]
+    return element 
 }
+
 export default makeElement

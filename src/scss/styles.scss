@@ -1,2 +1,7 @@
-@use 'reboot';
-@use 'page-header'
+@import 'reboot';
+@import 'vars';
+@import 'app-bar';
+
+body {
+    background-color: $bgColor;
+}

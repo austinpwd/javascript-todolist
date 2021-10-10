@@ -1,16 +1,15 @@
 import logo from '../icons/logo'
 import header from '../components/brandingHeader'
+import makeElement from '../utils/makeElement'
 
-function homePage(data) {
-    const markup = data.map((boilerplate, index) =>{
+const homePage = function (params){
 
-        const img = logo();
-        const head = header();
-        console.log(markup)
-    
-        return boilerplate
-    })
-    return markup
-}
+    const pageHeader = document.createElement('header')
+    pageHeader.appendChild(makeElement(logo()))
+    pageHeader.appendChild(makeElement(header()))
 
-export default homePage
+    return pageHeader
+      
+ }
+ 
+ export default homePage

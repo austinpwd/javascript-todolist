@@ -1,13 +1,6 @@
-import {Router} from "./router/routes";
-import link from "./components/ui/link";
-import homePage from "./pages/home";
-
+import {Router} from "./routes/router";
+import {Button} from "./components/ui/button"
 
 const app = document.querySelector("#app");
 
-window.addEventListener('load', function(evt){
-    console.log(app)
-    Router('/')
-    app.appendChild("test");
-    console.log(app)
-})
+Router("/")

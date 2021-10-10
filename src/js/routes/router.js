@@ -1,13 +1,15 @@
 import homePage from '../pages/home'
 import toDoPage from '../pages/toDoPage'
 
+const routes = {
+  "/":homePage(),
+  "/todo":toDoPage()
+}
+
+
 
 const Router = (pathname) => {
-    const routes = {
-        "/":homePage(),
-        "/todo":toDoPage()
-    }
-
+    
     const app = document.querySelector('#app');
     app.innerHTML = ''
     window.history.pushState(
