@@ -1,47 +1,32 @@
 import dataFetcher from "../../utils/dataFetcher";
 import makeElement from "../../utils/makeElement";
 
-const todoItem = function (elementType="li", title=null){
-    const newFragment = document.createDocumentFragment();
-    items = dataFetcher('../data/todos.json')
-    renderToDoItems(items)
+const date = 'Wednesday, November 12th'
+const newFragment = document.createDocumentFragment();
+
+todoItem(title='') = {
+    id:string,
+    title:string,
+    category:string,
+    isCompleted:boolean
+}
 
     function renderToDoItems(items) {
-        let dataKey;
-        let category;
-        let startDate;
-        let startTime;
-        let endDate;
-        let endTime;
-        let isComplete = false;
 
         items.forEach((item) => {
-            dataKey = item.id;
-            category = item.category;
-            title = item.title;
-            isComplete = item.isComplete;
-            startDate = item.startDate;
-            startTime = item.startTime;
-            endDate = item.endDate;
-            endTime = item.endTime;
+            currentToDo = todoItem(item.title);
 
-
-            const element = `<${elementType} data-key="${dataKey}">
-            ${category},
-            ${title},
-            ${isComplete},
-            ${startDate},
-            ${startTime},
-            ${endDate},
-            ${endTime}
-            </${elementType}>`
+            const element = `<li data-key="${currentToDo.id}">
+            ${currentToDo.isCompleted},
+            ${currentToDo.title},
+            ${currentToDo.category},
+            ${date}
+            </li>`
             newFragment.appendChild(makeElement(element))
-
-        });
-      }
-
-    return newFragment
-}
+        }
+    }
+    items = dataFetcher('../data/todos.json')
+    renderToDoItems(items)   
 
 export default todoItem
 
