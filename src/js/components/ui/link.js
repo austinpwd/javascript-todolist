@@ -9,7 +9,7 @@ const link = function (title, path){
         return false;
     }
     
-     let element = makeElement( `<a class="link" href="${path}" data-path="${path}"">${title}</button>`)
+     let element = makeElement(`<a class="link" href="${path}" data-path="${path}"">${title}</button>`)
      element.addEventListener('click', clickHandler)
     return  element
 }

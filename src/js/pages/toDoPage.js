@@ -1,5 +1,4 @@
 import brandingHeader from '../components/brandingHeader'
-import makeElement from '../utils/makeElement'
 import todoList from '../components/todoList';
 import todoItem from '../components/todoItem';
 
@@ -18,8 +17,9 @@ const toDoPage = function(){
     pageHeader.appendChild((brandingHeader()))
     app.appendChild(main)
     main.appendChild(container)
-    container.appendChild(makeElement(todoList(todoItem())))
+    container.appendChild(todoList(todoItem()))
 
+    return main;
       
  }
  

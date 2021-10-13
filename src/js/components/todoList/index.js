@@ -2,8 +2,9 @@ import dataFetcher from "../../utils/dataFetcher";
 import makeElement from "../../utils/makeElement";
 import todoItem from "../todoItem";
 
+const newFragment = document.createDocumentFragment();
+
 function renderToDos(data) {
-    const newFragment = document.createDocumentFragment();
     const listContainer = newFragment.appendChild(makeElement(`<ul className="todo-list">`))
 
     data.forEach(todo => {
@@ -13,16 +14,18 @@ function renderToDos(data) {
     })
 
     newFragment.appendChild(makeElement(`</ul>`))
+    return newFragment
 }
 
 const todoList = function() {
-    dataFetcher('../../data/todos.json')
+    dataFetcher(`data/todos.json`)
     .then((data) => {
       console.log("resolved", data);
       renderToDos(data);
     })
     .catch((err) => console.log("rejected", err));
 
+    return newFragment
 }
 
 export default todoList
