@@ -1,7 +1,6 @@
 const dataFetcher = async function (url){
      
-    const res = await fetch(url)
-    return await res.json()
+   return (await fetch(url)).json()
 }
 
 export default dataFetcher

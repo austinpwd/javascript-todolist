@@ -22,7 +22,7 @@ const Router = (pathname) => {
     
     validRoute = Object.keys(routes).find(path=> path===pathname)
     
-    validRoute != ''? app.appendChild(routes[window.location.pathname]) : app.appendChild(pageNotFound) 
+    validRoute != undefined ? app.appendChild(routes[window.location.pathname]) : app.appendChild(pageNotFound())
   }
 
 export default routes

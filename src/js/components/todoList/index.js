@@ -4,7 +4,9 @@ import todoItem from "../todoItem";
 
 const newFragment = document.createDocumentFragment();
 
-function renderToDos(data) {
+async function renderToDos() {
+    let data = []
+    data = await dataFetcher("./data/todos.json")
     const listContainer = newFragment.appendChild(makeElement(`<ul className="todo-list">`))
 
     data.forEach(todo => {
@@ -18,12 +20,7 @@ function renderToDos(data) {
 }
 
 const todoList = function() {
-    dataFetcher(`data/todos.json`)
-    .then((data) => {
-      console.log("resolved", data);
-      renderToDos(data);
-    })
-    .catch((err) => console.log("rejected", err));
+    renderToDos()
 
     return newFragment
 }
