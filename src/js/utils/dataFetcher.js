@@ -4,4 +4,4 @@ const dataFetcher = async function (url=null){
     return await res.json()
 }
 
-export {dataFetcher}
+export default dataFetcher

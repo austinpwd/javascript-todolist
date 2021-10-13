@@ -1,16 +1,24 @@
 import brandingHeader from '../components/brandingHeader'
 import makeElement from '../utils/makeElement'
-import link from '../components/ui/link'
 import todoList from '../components/todoList';
 import todoItem from '../components/todoItem';
 
 const app = document.querySelector('#app');
 const pageHeader = document.createElement('header')
+const h1 = document.createElement(`h1`)
+const main = document.createElement(`main`)
+const container =document.createElement(`div`)
 
 const toDoPage = function(){
+    h1.textContent = 'Current To-Do List'
+    container.className = "container"
 
+
+    pageHeader.appendChild(h1)
     pageHeader.appendChild((brandingHeader()))
-    app.appendChild(makeElement(todoList(todoItem())))
+    app.appendChild(main)
+    main.appendChild(container)
+    container.appendChild(makeElement(todoList(todoItem())))
 
       
  }
