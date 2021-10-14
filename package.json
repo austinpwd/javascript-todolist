@@ -10,8 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx parcel src/index.html",
     "build": "npx parcel build src/index.html --dist-dir public",
-    "clean:dev": "rm -rf .parcel-cache dist",
-    "clean:git": "rm -rf .parcel-cache dist  node_modules"
+    "clean:dev": "rm -rf .parcel-cache public",
+    "clean:git": "rm -rf .parcel-cache public  node_modules"
   },
   "author": "",
   "license": "ISC",
@@ -26,5 +26,13 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "uuid": "^3.4.0"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "src/data/", 
+        "staticOutDir": "data/" 
+      }
+    ]
   }
 }
