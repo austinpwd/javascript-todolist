@@ -6,7 +6,7 @@ const newFragment = document.createDocumentFragment();
 
 async function renderToDos() {
     let data = []
-    data = await dataFetcher("./data/todos.json")
+    data = await dataFetcher("data/todos.json")
     const listContainer = newFragment.appendChild(makeElement(`<ul className="todo-list">`))
 
     data.forEach(todo => {
