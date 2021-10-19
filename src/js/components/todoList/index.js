@@ -1,13 +1,11 @@
 import dataFetcher from "../../utils/dataFetcher";
 import todoItem from "../todoItem";
 
-const newFragment = document.createDocumentFragment();
-
 async function renderToDos() {
     const data = await dataFetcher('./data/todos.json')
+    const newFragment = document.createDocumentFragment()
     const listContainer = document.createElement(`ul`)
     listContainer.className = 'todo-list'
-    newFragment.appendChild(listContainer)
 
     data.forEach(todo => {
         const isCompleted = !!todo.isComplete;
@@ -15,13 +13,15 @@ async function renderToDos() {
         listContainer.appendChild(newToDoItem)
     })
 
+    newFragment.appendChild(listContainer)
+
     return newFragment
 }
 
 const todoList = function() {
-    renderToDos()
+    const loadList = renderToDos()
 
-    return newFragment
+    return loadList
 }
 
 export default todoList
