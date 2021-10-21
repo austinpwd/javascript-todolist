@@ -1,11 +1,13 @@
 let store = null
 
 // Create the store accessed by all our app components
-function createStore (data=[]){
-     if(store === null){
+function createStore (data = []) {
+     if (store === null) 
+     {
          store = [...data]
      }
-     return null
+
+     return store
 }
 
 function getStore (){

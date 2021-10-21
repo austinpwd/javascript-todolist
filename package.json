@@ -8,8 +8,8 @@
   "default": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " npm run static && npm run dev",
-    "static": "mkdir public && cp -R src/static/data public/data",
+    "start": " npm run static && npm run build",
+    "static": "rm -rf public && mkdir public && cp -R src/static/data public/data",
     "build": "npx parcel build src/index.html --dist-dir public",
     "clean:dev": "rm -rf .parcel-cache public",
     "clean:git": "rm -rf .parcel-cache public  node_modules"
@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0",
     "http-server": "^13.0.2",
     "parcel": "^2.0.0-rc.0",
     "parcel-plugin-static-files-copy": "^2.6.0",
@@ -26,14 +26,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "react-icons": "^4.3.1",
     "uuid": "^3.4.0"
-  },
-  "staticFiles": {
-    "staticPath": [
-      {
-        "staticPath": "src/data/", 
-        "staticOutDir": "data/" 
-      }
-    ]
   }
 }

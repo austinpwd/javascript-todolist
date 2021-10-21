@@ -1,4 +1,6 @@
 import makeElement from "../../utils/makeElement";
+import {TiEdit as EditIcon} from 'react-icons/ti';
+import {RiCloseCircleLine as DeleteIcon} from 'react-icons/ri';
 
 function renderCategory(category) {
     switch(category) {
@@ -30,8 +32,8 @@ const todoItem = (id=``, title = ``, category =``, isCompleted = false,  startDa
             </div>
         </div>
         <div class="icons">
-            <i class="far fa-edit"></i>
-            <i class="far fa-trash-alt"></i>
+            <i class="${EditIcon}"></i>
+            <i class="${DeleteIcon}"></i>
         </div>
     `
     ));

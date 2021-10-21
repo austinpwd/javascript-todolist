@@ -2,7 +2,22 @@
 @import 'vars';
 @import 'app-bar';
 @import '_header';
+@import '_todos';
 
 body {
+    height: 100vh;
     background-color: $bgColor;
 }
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    background: darkgreen;
+    width: 520px;
+    min-height: 600px;
+    margin: 128px auto;
+    border-radius: 10px;
+    padding-bottom: 32px;
+  }
