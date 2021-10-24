@@ -1,6 +1,4 @@
 import dataFetcher from "../../utils/dataFetcher";
-import {createStore, getStore} from "../../redux/store";
-import keyGenerator from '../../utils/keyGenerator';
 import todoItem from "../todoItem";
 
 async function renderToDos() {
@@ -10,9 +8,11 @@ async function renderToDos() {
 
     let data = await dataFetcher('./data/todos.json')
 
-    data[0].id === undefined ? data = [...keyGenerator(data)] :
-
-    createStore(data)
+    data.forEach(todo => {
+        const isCompleted = !!todo.isComplete;
+        const newToDoItem = todoItem(todo.id, todo.title, todo.category, isCompleted, todo.startDate, todo.startTime, todo.endDate, todo.endTime)
+        listContainer.appendChild(newToDoItem)
+    })
 
     newFragment.appendChild(listContainer)
 
