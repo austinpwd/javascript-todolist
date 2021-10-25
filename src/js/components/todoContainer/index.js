@@ -46,7 +46,7 @@ const todoContainer = function(){
      const inProgress = document.createElement('p')
      const clearAllBtn = document.createElement('button')
      container.className = "clear-todos"
-     inProgress.textContent = `You currently have 3 Todos in progress`
+     inProgress.textContent = `You have 3 Todos currently in progress`
      clearAllBtn.textContent = "Remove All"
 
      container.appendChild(inProgress)
