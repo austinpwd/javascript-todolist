@@ -8,10 +8,10 @@
   "default": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " npm run static && npm run build",
+    "start": " npm run static && npm run build src/index.html",
     "static": "npm run clean:dev && mkdir public && cp -R src/static/data public/data",
     "build": "npm run static && npx parcel build src/index.html --dist-dir public",
-    "clean:dev": "rm -rf .parcel-cache public",
+    "clean:dev": "rm -rf .parcel-cache public dist",
     "clean:git": "rm -rf .parcel-cache public  node_modules"
   },
   "author": "",

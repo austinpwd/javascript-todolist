@@ -1,4 +1,4 @@
-import homePage from '../pages/home'
+import homePage from '../pages/index'
 import toDoPage from '../pages/toDoPage'
 import pageNotFound from '../pages/pageNotFound'
 
@@ -9,24 +9,27 @@ const routes = {
 
 
 
-function Router(pathname) {
+const Router = (pathname) => {
 
-  const validRoute = Object.keys(routes).find(key => key===pathname)
+  const isValidRoute = Object.keys(routes).find(key => key === pathname);
 
-  const app = document.querySelector('#app')
-  app.innerHTML = ''
+  const app = document.querySelector('#app');
+  app.innerHTML = '';
   window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname
+      {},
+      pathname,
+      window.location.origin + pathname
   )
-
-  validRoute !== undefined ? app.appendChild(routes[validRoute]) : app.appendChild(pageNotFound())
-
-
+  
+  // If path doesn't exist -> load the error page
+  if (isValidRoute === undefined) {
+      app.appendChild(pageNotFound())
+  }
+  else {
+      app.appendChild(routes[isValidRoute])
+  }
 }
 
-
-export {Router}
+export default Router;
 
  

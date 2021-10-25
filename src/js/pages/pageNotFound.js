@@ -1,18 +1,17 @@
 import header from '../components/ui/header'
-import brandingHeader from '../components/brandingHeader'
+import error from '../icons/error'
 import makeElement from '../utils/makeElement'
 import link from '../components/ui/link'
-import tagline from '../components/ui/tagline'
 
 const pageNotFound = function() {
     const newFragment = document.createDocumentFragment()
     const pageHeader = document.createElement('header')
     const main = document.createElement(`main`)
 
-    pageHeader.appendChild(makeElement((header())))
+    pageHeader.appendChild(makeElement((header("h1", "404 Not Found"))))
 
-    main.appendChild((brandingHeader()))
-    main.appendChild(link(tagline("h2", "take me back", "ui-redirect"), "/"))
+    main.appendChild(makeElement(error()))
+    main.appendChild(link("take me back", "/"))
 
     newFragment.appendChild(pageHeader)
     newFragment.appendChild(main)
