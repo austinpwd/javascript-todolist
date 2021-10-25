@@ -2,29 +2,34 @@ import makeElement from '../utils/makeElement';
 import header from '../components/ui/header';
 import brandingHeader from '../components/brandingHeader'
 import todoList from '../components/todoList';
+import addToDo from '../components/addToDo';
 
+const newFragment = document.createDocumentFragment()
 const pageHeader = document.createElement('header')
 const main = document.createElement(`main`)
-const container = document.createElement(`div`)
 const appBar = document.createElement('div')
+const footer = document.createElement('footer')
 
 
 
 const toDoPage = function(){
-
+    
+    appBar.className = 'app-bar'
+    
     pageHeader.appendChild(makeElement((header("h1", "Current To-Do List"))))
     pageHeader.appendChild(brandingHeader())
-    container.className = 'container'
-    appBar.className = 'app-bar'
-
-    const todoData = todoList()
     
-    container.appendChild(todoData)
-    main.appendChild(pageHeader)
-    main.appendChild(container)
+    const todoData = todoList()
+    const todoInput = addToDo()
+    appBar.appendChild(todoInput)
     main.appendChild(appBar)
 
-    return main;
+    newFragment.appendChild(pageHeader)
+    newFragment.appendChild(main)
+    newFragment.appendChild(footer)
+
+
+    return newFragment;
       
  }
  

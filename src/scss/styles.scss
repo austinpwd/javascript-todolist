@@ -5,9 +5,10 @@
 @import '_todos';
 
 body {
+    font-family: "Poppins", sans-serif;
     background: white;
     background-size: 100%;
-    text-align: center;
+    margin: 0 auto;
 }
 
 #app {
@@ -23,10 +24,4 @@ body {
   svg {
     background-position: top center;
     width: center;
-}
-
-.add-todo,
-.edit-todo,
-.trash-todo {
-  height: 25vh;
 }

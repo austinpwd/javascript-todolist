@@ -3,11 +3,12 @@ import brandingHeader from '../components/brandingHeader'
 import makeElement from '../utils/makeElement'
 import link from '../components/ui/link'
 
-const homePage = function(){
-    const newFragment = document.createDocumentFragment()
-    const pageHeader = document.createElement('header')
-    const main = document.createElement(`main`)
+const newFragment = document.createDocumentFragment()
+const pageHeader = document.createElement('header')
+const main = document.createElement(`main`)
+const footer = document.createElement(`footer`)
 
+const homePage = function(){
     pageHeader.appendChild(makeElement((header())))
 
     main.appendChild((brandingHeader()))
@@ -15,6 +16,7 @@ const homePage = function(){
 
     newFragment.appendChild(pageHeader)
     newFragment.appendChild(main)
+    newFragment.appendChild(footer)
 
     return newFragment
       
