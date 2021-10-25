@@ -8,8 +8,8 @@
     padding: 10px;
     background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
   }
-  .wrapper{
-    background: #fff;
+  .app{
+    background:whitesmoke;
     max-width: 400px;
     width: 100%;
     margin: 120px auto;
@@ -17,17 +17,17 @@
     border-radius: 5px;
     box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
   }
-  .wrapper header{
+  .app header{
     font-size: 30px;
     font-weight: 600;
   }
-  .wrapper .inputField{
+  .app .app-bar{
     margin: 20px 0;
     width: 100%;
     display: flex;
     height: 45px;
   }
-  .inputField input{
+  .app-bar input{
     width: 85%;
     height: 100%;
     outline: none;
@@ -37,18 +37,18 @@
     padding-left: 15px;
     transition: all 0.3s ease;
   }
-  .inputField input:focus{
-    border-color: #1EDF24;
+  .app-bar input:focus{
+    border-color: #929292;
   }
-  .inputField button{
+  .app-bar button{
+    color: whitesmoke;
+    background: black;
     width: 50px;
     height: 100%;
     border: none;
-    color: #fff;
     margin-left: 5px;
     font-size: 21px;
     outline: none;
-    background: #8E49E8;
     cursor: pointer;
     border-radius: 3px;
     opacity: 0.6;
@@ -57,17 +57,17 @@
   }
   .clearField button:hover,
   .app-bar button:hover{
-    background: #721ce3;
+    background: #656463;
   }
-  .inputField button.active{
+  .app-bar button.active{
     opacity: 1;
     pointer-events: auto;
   }
-  .wrapper .todoList{
+  .app .todo-list{
     max-height: 250px;
     overflow-y: auto;
   }
-  .todoList li{
+  .todo-list li{
     position: relative;
     list-style: none;
     margin-bottom: 8px;
@@ -78,47 +78,44 @@
     overflow: hidden;
     word-wrap: break-word;
   }
-  .todoList li .icon{
-    position: absolute;
-    right: -45px;
+  .todo-list li .icon{
+    display: flex;
+    flex-flow: row nowrap;
     top: 50%;
-    transform: translateY(-50%);
-    background: #e74c3c;
-    width: 45px;
-    text-align: center;
-    color: #fff;
     padding: 10px 15px;
     border-radius: 0 3px 3px 0;
     cursor: pointer;
-    transition: all 0.2s ease;
+    color: black;
   }
-  .todoList li:hover .icon{
-    right: 0px;
+
+  .todo-list li .icon p{
+      margin: 0 1rem;
   }
-  .app-bar{
+
+  .clear-todos{
     display: flex;
     width: 100%;
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
   }
-  .app-bar button{
+  .clear-todos button{
+    color: white;
+    background: black;
     padding: 6px 10px;
     border-radius: 3px;
     border: none;
     outline: none;
-    color: #fff;
     font-weight: 400;
     font-size: 16px;
     margin-left: 5px;
-    background: #8E49E8;
     cursor: pointer;
     user-select: none;
     opacity: 0.6;
     pointer-events: none;
     transition: all 0.3s ease;
   }
-  .app-bar button .active{
+  .clear-todos button .active{
     opacity: 1;
     pointer-events: auto;
   }

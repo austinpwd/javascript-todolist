@@ -9,6 +9,7 @@ function todoList() {
     dataFetcher("./data/todos.json")
     .then((todos) => {
         if (todos !== null) {
+            createStore
             todos.forEach(todo => {
                 const isCompleted = !!todo.isComplete;
                 const newToDoItem = todoItem(todo.id, todo.title, todo.category, isCompleted, todo.startDate, todo.startTime, todo.endDate, todo.endTime);

@@ -24,10 +24,11 @@ const todoItem = (id=``, title = ``, category =``, isCompleted = false,  startDa
                     <h3 class="title">${title}</h3>
                     <p class="category">${category}</p>
                     <p class="time">${startTime} - ${endTime}</p>
-                    <p class="date">Due: ${endDate} (Started on ${startDate})</p>
+                    <p class="date">Due: ${endDate}</p>
                     <p class="is-completed">${isCompleted ? `Completed <i class="fas fa-check-square"></i>` 
                     : `In Progress <i class="fas fa-spinner"></i>`}</p>
-                    <span class="icon"><i class="fas fa-trash"></i></span>
+                    <span class="icon"><i class="far fa-edit"><p>Edit</p></i></span>
+                    <span class="icon"><i class="far fa-trash-alt"><p>Remove</p></i></span>
         </li>`));
 }
 
