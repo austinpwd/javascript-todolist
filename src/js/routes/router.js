@@ -2,8 +2,6 @@ import homePage from '../pages/home'
 import toDoPage from '../pages/toDoPage'
 import pageNotFound from '../pages/pageNotFound'
 
-let validRoute = ''
-
 const routes = {
   "/":homePage(),
   "/todo":toDoPage()
@@ -11,21 +9,24 @@ const routes = {
 
 
 
-const Router = (pathname) => {
-    const app = document.querySelector('#app');
-    app.innerHTML = ''
-    window.history.pushState(
-      {},
-      pathname,
-      window.location.origin + pathname
-    )
-    
-    validRoute = Object.keys(routes).find(path=> path===pathname)
-    
-    validRoute != undefined ? app.appendChild(routes[window.location.pathname]) : app.appendChild(pageNotFound())
-  }
+function Router(pathname) {
 
-export default routes
+  const validRoute = Object.keys(routes).find(key => key===pathname)
+
+  const app = document.querySelector('#app')
+  app.innerHTML = ''
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname
+  )
+
+  validRoute !== undefined ? app.appendChild(routes[validRoute]) : app.appendChild(pageNotFound())
+
+
+}
+
+
 export {Router}
 
  

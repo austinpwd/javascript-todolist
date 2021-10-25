@@ -4,13 +4,19 @@ import makeElement from '../utils/makeElement'
 import link from '../components/ui/link'
 
 const homePage = function(){
-
+    const newFragment = document.createDocumentFragment()
     const pageHeader = document.createElement('header')
-    pageHeader.appendChild(makeElement((header())))
-    pageHeader.appendChild((brandingHeader()))
-    pageHeader.appendChild(link("Go to To-Do List app", "/todo"))
+    const main = document.createElement(`main`)
 
-    return pageHeader
+    pageHeader.appendChild(makeElement((header())))
+
+    main.appendChild((brandingHeader()))
+    main.appendChild(link("Go to To-Do List app", "/todo"))
+
+    newFragment.appendChild(pageHeader)
+    newFragment.appendChild(main)
+
+    return newFragment
       
  }
  

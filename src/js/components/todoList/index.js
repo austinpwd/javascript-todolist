@@ -1,28 +1,17 @@
-import dataFetcher from "../../utils/dataFetcher";
-import todoItem from "../todoItem";
+import {todoItem} from "../todoItem";
 
-async function renderToDos() {
-    const newFragment = document.createDocumentFragment()
-    const listContainer = document.createElement(`ul`)
-    listContainer.className = 'todo-list'
 
-    let data = await dataFetcher('./data/todos.json')
+function todoList(todos) {
+    const todoData = document.createElement(`ul`);
+    todoData.className = 'todo-list';
 
-    data.forEach(todo => {
+    todos.forEach(todo => {
         const isCompleted = !!todo.isComplete;
-        const newToDoItem = todoItem(todo.id, todo.title, todo.category, isCompleted, todo.startDate, todo.startTime, todo.endDate, todo.endTime)
-        listContainer.appendChild(newToDoItem)
-    })
+        const newToDoItem = todoItem(todo.id, todo.title, todo.category, isCompleted, todo.startDate, todo.startTime, todo.endDate, todo.endTime);
+        todoData.appendChild(newToDoItem);
+    });
 
-    newFragment.appendChild(listContainer)
-
-    return newFragment
+    return todoData
 }
 
-const todoList = function() {
-    const loadList = renderToDos()
-
-    return loadList
-}
-
-export default todoList
+export {todoList}

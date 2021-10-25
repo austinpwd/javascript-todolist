@@ -1,26 +1,23 @@
+import header from '../components/ui/header'
 import brandingHeader from '../components/brandingHeader'
+import makeElement from '../utils/makeElement'
 import link from '../components/ui/link'
+import tagline from '../components/ui/tagline'
 
-const newFragment = document.createDocumentFragment();
-const pageHeader = document.createElement('header')
-const h1 = document.createElement(`h1`)
-const main = document.createElement(`main`)
-const container =document.createElement(`div`)
+const pageNotFound = function() {
+    const newFragment = document.createDocumentFragment()
+    const pageHeader = document.createElement('header')
+    const main = document.createElement(`main`)
 
-const pageNotFound = function(){
-    h1.textContent = '404 Not Found'
-    container.className = "container"
+    pageHeader.appendChild(makeElement((header())))
 
-    pageHeader.appendChild(h1)
-    pageHeader.appendChild((brandingHeader()))
-    main.appendChild(container)
-    container.appendChild(link("take me back", "/"))
+    main.appendChild((brandingHeader()))
+    main.appendChild(link(tagline("h2", "take me back", "ui-redirect"), "/"))
 
     newFragment.appendChild(pageHeader)
     newFragment.appendChild(main)
 
-    return newFragment;
-      
- }
- 
- export default pageNotFound
+    return newFragment
+}
+
+export default pageNotFound

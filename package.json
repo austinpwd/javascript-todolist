@@ -9,8 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": " npm run static && npm run build",
-    "static": "rm -rf public && mkdir public && cp -R src/static/data public/data",
-    "build": "npx parcel build src/index.html --dist-dir public",
+    "static": "npm run clean:dev && mkdir public && cp -R src/static/data public/data",
+    "build": "npm run static && npx parcel build src/index.html --dist-dir public",
     "clean:dev": "rm -rf .parcel-cache public",
     "clean:git": "rm -rf .parcel-cache public  node_modules"
   },
