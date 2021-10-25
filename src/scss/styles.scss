@@ -24,3 +24,9 @@ body {
     background-position: top center;
     width: center;
 }
+
+.add-todo,
+.edit-todo,
+.trash-todo {
+  height: 25vh;
+}

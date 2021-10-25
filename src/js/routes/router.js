@@ -11,7 +11,7 @@ const routes = {
 
 function Router(pathname) {
 
-  const validRoute = Object.keys(routes).find(path => path === pathname)
+  const validRoute = Object.keys(routes).find(path=>path===pathname)
 
   const app = document.querySelector('#app')
   app.innerHTML = ''
