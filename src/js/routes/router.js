@@ -9,25 +9,19 @@ const routes = {
 
 
 
-const Router = (pathname) => {
+function Router(pathname) {
 
-  const isValidRoute = Object.keys(routes).find(key => key === pathname);
+  const validRoute = Object.keys(routes).find(path => path === pathname)
 
-  const app = document.querySelector('#app');
-  app.innerHTML = '';
+  const app = document.querySelector('#app')
+  app.innerHTML = ''
   window.history.pushState(
-      {},
-      pathname,
-      window.location.origin + pathname
+    {},
+    pathname,
+    window.location.origin + pathname
   )
-  
-  // If path doesn't exist -> load the error page
-  if (isValidRoute === undefined) {
-      app.appendChild(pageNotFound())
-  }
-  else {
-      app.appendChild(routes[isValidRoute])
-  }
+
+  validRoute !== undefined ? app.appendChild(routes[window.location.pathname]) : app.appendChild(pageNotFound())
 }
 
 export default Router;
