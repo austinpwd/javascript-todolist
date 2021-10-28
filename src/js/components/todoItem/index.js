@@ -1,25 +1,6 @@
 import makeElement from '../../utils/makeElement';
-import addIcon from '../../icons/addIcon';
-import editIcon from '../../icons/editIcon';
-import trashIcon from '../../icons/trashIcon';
-
-function renderCategory(category) {
-    switch(category) {
-        case 'School':
-            return 'School';
-        case 'Home':
-            return 'Home';
-        case 'Social':
-            return 'Social';
-        case 'Work':
-            return 'Work';
-        default:
-            return 'Health';
-    }
-}
 
 const todoItem = (id=``, title = ``, category =``, isCompleted = false,  startDate = ``, startTime =``, endDate = ``, endTime = ``) => {
-
     return makeElement((`<li class="todo-item" data-key="${id}">
                     <h3 class="title"><b>Title</b>: ${title}</h3>
                     <p class="category"><b>Category</b>: ${category}</p>
