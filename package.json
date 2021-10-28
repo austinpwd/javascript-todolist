@@ -2,9 +2,6 @@
   "name": "todo-webapp",
   "version": "1.0.0",
   "description": "A simple To-Do List web application that is made using React and asynchronously parses from a JSON file.",
-  "directories": {
-    "doc": "docs"
-  },
   "default": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +13,19 @@
   },
   "author": "Austin Doan",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/austinpwd/react-simpletodoapp.git"
+  },
+  "keywords": [
+    "to-do list",
+    "austin doan",
+    "assignment"
+  ],
+  "bugs": {
+    "url": "https://github.com/austinpwd/react-simpletodoapp/issues"
+  },
+  "homepage": "https://github.com/austinpwd/react-simpletodoapp/#readme",
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-sass": "^2.0.0",
