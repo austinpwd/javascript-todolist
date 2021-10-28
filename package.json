@@ -1,5 +1,5 @@
 {
-  "name": "todo-webapp",
+  "name": "react-simpletodoapp",
   "version": "1.0.0",
   "description": "A simple To-Do List web application that is made using React and asynchronously parses from a JSON file.",
   "default": "src/index.html",
