@@ -1,7 +1,7 @@
 {
-  "name": "workflow",
+  "name": "todo-webapp",
   "version": "1.0.0",
-  "description": "Fewder is a simple Front End Framework for developing Web App's using modules",
+  "description": "A simple To-Do List web application that is made using React and asynchronously parses from a JSON file.",
   "directories": {
     "doc": "docs"
   },
@@ -14,14 +14,13 @@
     "clean:dev": "rm -rf .parcel-cache public dist",
     "clean:git": "rm -rf .parcel-cache public  node_modules"
   },
-  "author": "",
+  "author": "Austin Doan",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-sass": "^2.0.0",
     "http-server": "^13.0.2",
     "parcel": "^2.0.0-rc.0",
-    "parcel-plugin-static-files-copy": "^2.6.0",
     "sass": "^1.42.1"
   },
   "dependencies": {
