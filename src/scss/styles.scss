@@ -1,26 +1,21 @@
-@import 'reboot';
-@import 'vars';
-@import '_header';
-@import '_todos';
+@import "reboot";
+@import "vars";
+@import "_header";
+@import "_app-bar";
+@import "_clear-todos";
+@import "_todo-list";
 
 body {
-    font-family: "Poppins", sans-serif;
-    background: white;
-    background-size: 100%;
-    text-align: center;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: white;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#app {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 520px;
-    margin: auto;
-    padding-bottom: 32px;
-  }
-
-  svg {
-    background-position: top center;
-    width: center;
+.link-container {
+  text-align: center;
 }

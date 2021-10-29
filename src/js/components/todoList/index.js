@@ -1,23 +1,28 @@
-import {dataFetcher} from "../../utils/dataFetcher";
-import {todoItem} from "../todoItem";
-
+import { dataFetcher } from "../../utils/dataFetcher";
+import { todoItem } from "../todoItem";
 
 function todoList() {
-    const todoData = document.createElement(`ul`);
-    todoData.className = 'todo-list';
+  const todoData = document.createElement(`ul`);
+  todoData.className = "todo-list";
 
-    dataFetcher("./data/todos.json")
-    .then((todos) => {
-        if (todos !== null) {
-            createStore
-            todos.forEach(todo => {
-                const isCompleted = !!todo.isComplete;
-                const newToDoItem = todoItem(todo.id, todo.title, todo.category, isCompleted, todo.startDate, todo.startTime, todo.endDate, todo.endTime);
-                todoData.appendChild(newToDoItem);
-            })
-        }
-    })
-    return todoData
+  dataFetcher("./data/todos.json").then((todos) => {
+    if (todos !== null) {
+      todos.forEach((todo) => {
+        const newToDoItem = todoItem(
+          todo.id,
+          todo.title,
+          todo.category,
+          todo.isComplete,
+          todo.startDate,
+          todo.startTime,
+          todo.endDate,
+          todo.endTime
+        );
+        todoData.appendChild(newToDoItem);
+      });
+    }
+  });
+  return todoData;
 }
 
-export default todoList
+export default todoList;

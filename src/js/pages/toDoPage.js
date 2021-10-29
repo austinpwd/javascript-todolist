@@ -1,13 +1,9 @@
-import todoContainer from '../components/todoContainer';
+import todoContainer from "../components/todoContainer";
 
+const toDoPage = function () {
+  const todoContent = todoContainer();
 
-const toDoPage = function(){
+  return todoContent;
+};
 
-    const todoContent = todoContainer()
-
-    return todoContent;
-      
- }
- 
- export default toDoPage
-
+export default toDoPage;
