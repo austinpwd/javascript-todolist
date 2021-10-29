@@ -16,11 +16,12 @@
     "clean:dev": "rm -rf .parcel-cache dist",
     "clean:git": "rm -rf .parcel-cache dist  node_modules"
   },
+  "author": "Austin Doan",
   "license": "ISC",
   "keywords": [
     "to-do list",
     "austin doan",
-    "assignment"
+    "aphex twin"
   ],
   "bugs": {
     "url": "https://github.com/austinpwd/react-simpletodoapp/issues"
