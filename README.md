@@ -6,10 +6,10 @@ This application was made using rudimentary JavaScript and very minimal CSS. I c
  In order to run the web app, you will need to install the projects node_modules by running ```npm install```
 
 ## Build
-You will need to build the web application by running ```npm build```
+You will need to build the web application by running ```npm run build```
 
 ## Deployment
-You can start a local instance of the web application by running ```npm build```
+You can start a local instance of the web application by running ```npm start```
 
 By default, the instance will bind to ```localhost:1234```. There is an already deployed instance available to view at **<https://austinpwd-todo-app.netlify.app>**
 
