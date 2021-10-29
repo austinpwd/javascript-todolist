@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run static && npx parcel src/index.html",
-    "static": "mkdir -p dist && cp -R src/static/data dist/data",
+    "static": "mkdir -p dist && cp -R src/static/* dist/",
     "dev": "",
     "build": "npm run static && npx parcel build src/index.html",
     "clean:dev": "rm -rf .parcel-cache dist",
