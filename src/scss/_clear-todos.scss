@@ -19,6 +19,6 @@
 .clear-todos button:hover {
   background: #656463;
 }
-.clear-todos button .active {
+.clear-todos button:active {
   opacity: 1;
 }

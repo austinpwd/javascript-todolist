@@ -18,8 +18,10 @@
 .app-bar button {
   color: whitesmoke;
   background: black;
-  outline: none;
   cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: none;
   border-radius: 3px;
   opacity: 0.5;
 }
@@ -31,7 +33,7 @@
 .app-bar button:hover {
   background: #656463;
 }
-.app-bar button.active {
+.app-bar button:active {
   opacity: 1;
 }
 

@@ -39,7 +39,7 @@ export default todoContainer;
 const clearToDos = function () {
   const container = document.createElement("div");
   const inProgress = document.createElement("p");
-  const clearAllBtn = button("Remove All");
+  const clearAllBtn = button("Remove All", "remove-todos");
   container.className = "clear-todos";
   inProgress.textContent = `You have 3 Todos currently in progress`;
 
