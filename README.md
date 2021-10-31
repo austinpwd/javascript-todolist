@@ -1,6 +1,6 @@
 # A simple To-Do List Web App by Austin Doan
 
-This application was made using rudimentary JavaScript and very minimal CSS. I consider it as an exercise in introductory frontend user interface development.
+This application was made using rudimentary JavaScript and components, as well as very minimal CSS. I consider it as an exercise in introductory frontend user interface development.
 
 ## Install
  In order to run the web app, you will need to install the projects node_modules by running ```npm install```
