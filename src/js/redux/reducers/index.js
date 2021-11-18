@@ -1,20 +1,33 @@
-function reducers ({action, todos = []}){
+import { getStore, updateStore } from "..";
+import pageNotFound from "../../pages/pageNotFound";
+
+function reducers ({state, action}){
+    const state = getStore()
+
     switch(action.type){
-        case 'ADD':
+        case 'TODO_ADDED':
             return [
-                ...todos,
+                ...state,
                 {
+                    id = uuidv4().substr(0,8),
+                    category = action.payload.category,
+                    title = action.payload.title,
+                    isComplete = action.payload.isComplete,
+                    startDate = action.payload.startDate,
+                    startTime = action.payload.startTime,
+                    endDate = action.payload.endDate,
+                    endTime = action.payload.endTime
 
                 }
             ]
-        case 'EDIT':
+        case 'TODO_EDITED':
             return "remove employe with an id";
-        case 'DELETE':
-            return "create a new employee";
-        case 'TODO_STATUS':
-            return 
+        case 'TODO_DELETED':
+            return state.filter(todo => todo.id !== action.payload.id)
+        case 'TODO_TOGGLED':
+             return state.filter(todo => todo.id === action.payload.id)
         default:
-            return store
+            return state
     }
 
 }

@@ -1,21 +1,8 @@
 @import "reboot";
-@import "vars";
-@import "_header";
-@import "_app-bar";
-@import "_clear-todos";
-@import "_todo-list";
-
-body {
-  font-family: "Poppins", sans-serif;
-  line-height: 1.6;
-  background: white;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.link-container {
-  text-align: center;
-}
+@import "root";
+@import "home";
+@import "app-bar";
+@import "clear-todos";
+@import "todos";
+@import "removeToDo";
+@import "editToDo";

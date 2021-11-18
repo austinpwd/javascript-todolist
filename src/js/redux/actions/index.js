@@ -1,16 +1,41 @@
-import { v4 as uuidv4} from 'uuid'
-
 export const addToDo = {
-    type: 'ADD',
-    id: uuidv4().substr(0,8)
+    type: 'TODO_ADDED',
+    payload: {
+        category:"",
+        title:"",
+        isComplete:true,
+        startDate:"",
+        startTime:"",
+        endDate:"",
+        endTime:""
+    }
 }
 
 export const editToDo = {
-    type: 'EDIT',
-    id:"D00D2BAD"
+    type: 'TODO_EDITED',
+    payload: {
+        id: "",
+        category:"",
+        title:"",
+        isComplete:true,
+        startDate:"",
+        startTime:"",
+        endDate:"",
+        endTime:""
+    }
 }
 
 export const deleteToDo = {
-    type: 'DELETE',
-    id:"D00D2BAD"
+    type: 'TODO_DELETED',
+    payload: {
+        id: ""
+    }
+}
+
+export const toggleStatus = {
+    type: 'TODO_TOGGLED',
+    payload: {
+        id: "",
+        isComplete = true
+    }
 }

@@ -4,14 +4,18 @@ function createStore (data=[]){
      if(store === null){
          store = [...data]
      }
-     return null
+     return store
 }
 
 function getStore(){
     return store
 }
- 
-export {createStore, getStore}
+
+function updateStore(state){
+    return store = [...state]
+}
+
+export {createStore, getStore, updateStore}
 
 
  

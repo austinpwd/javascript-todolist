@@ -1,6 +1,6 @@
 const header = (
   elementType = "h1",
-  title = "Austin's Basic To-Do List",
+  title = "To-Do 2.0",
   className = "ui-header"
 ) => {
   const element = `<${elementType} class="${className}">${title}</${elementType}>`;

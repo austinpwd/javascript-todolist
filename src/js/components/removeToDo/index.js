@@ -14,16 +14,12 @@ const onClick = function(e) {
   return false
 }
 
-const addToDoContainer = function () {
+const removeToDoContainer = function () {
   appBar.className = "app-bar";
 
-  pageHeader.appendChild(makeElement(header("h1", "Add")));
+  pageHeader.appendChild(makeElement(header("h1", "Current To-Do List")));
   pageHeader.appendChild(brandingHeader());
 
-
-
-
-  
 
   main.appendChild(appBar);
 
@@ -34,4 +30,4 @@ const addToDoContainer = function () {
   return newFragment;
 };
 
-export default addToDoContainer;
+export default removeToDoContainer;

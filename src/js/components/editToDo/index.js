@@ -2,6 +2,7 @@ import makeElement from "../../utils/makeElement";
 import header from "../ui/header";
 import brandingHeader from "../brandingHeader";
 
+
 const newFragment = document.createDocumentFragment();
 const pageHeader = document.createElement("header");
 const main = document.createElement(`main`);
@@ -14,17 +15,13 @@ const onClick = function(e) {
   return false
 }
 
-const addToDoContainer = function () {
+const editToDoContainer = function () {
   appBar.className = "app-bar";
 
-  pageHeader.appendChild(makeElement(header("h1", "Add")));
+  pageHeader.appendChild(makeElement(header("h1", "Current To-Do List")));
   pageHeader.appendChild(brandingHeader());
 
-
-
-
   
-
   main.appendChild(appBar);
 
   newFragment.appendChild(pageHeader);
@@ -34,4 +31,4 @@ const addToDoContainer = function () {
   return newFragment;
 };
 
-export default addToDoContainer;
+export default editToDoContainer;

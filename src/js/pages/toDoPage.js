@@ -1,4 +1,4 @@
-import todoContainer from "../components/todoContainer";
+import todoContainer from "../components/todos";
 
 const toDoPage = function () {
   const todoContent = todoContainer();
