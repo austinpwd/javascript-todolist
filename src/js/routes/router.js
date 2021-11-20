@@ -6,14 +6,15 @@ import removeToDoPage from "../pages/removeToDoPage";
 import pageNotFound from "../pages/pageNotFound";
 
 const routes = {
-  "/": homePage(),
-  "/todo": toDoPage(),
-  "/add-todo": addToDoPage(),
-  "/edit-todo": editToDoPage(),
-  "/remove-todo": removeToDoPage()
+  "/": homePage,
+  "/todo": toDoPage,
+  "/add-todo": addToDoPage,
+  "/edit-todo": editToDoPage,
+  "/remove-todo": removeToDoPage
 };
 
-function Router(pathname) {
+const Router = (pathname, params=null) => {
+
   const validRoute = Object.keys(routes).find((path) => path === pathname);
 
   const app = document.querySelector("#app");
@@ -21,8 +22,8 @@ function Router(pathname) {
   window.history.pushState({}, pathname, window.location.origin + pathname);
 
   validRoute !== undefined
-    ? app.appendChild(routes[window.location.pathname])
+    ? app.appendChild(routes[validRoute](params))
     : app.appendChild(pageNotFound());
 }
 
-export default Router;
+export {Router};

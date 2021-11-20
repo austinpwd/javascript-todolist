@@ -1,41 +1,50 @@
+import * as types from "../actionTypes"
+import { Router } from "../../routes/router"
+
 export const addToDo = {
-    type: 'TODO_ADDED',
+    type: types.TODO_ADDED,
     payload: {
-        category:"",
-        title:"",
-        isComplete:true,
-        startDate:"",
-        startTime:"",
-        endDate:"",
-        endTime:""
-    }
+        id: "",
+        category: "",
+        title: "",
+        isComplete: false,
+        startDate: "",
+        startTime: "",
+        endDate: "",
+        endTime: ""
+    },
+    cb: () => Router('/todo') 
+
+    
 }
 
 export const editToDo = {
-    type: 'TODO_EDITED',
+    type: types.TODO_EDITED,
     payload: {
         id: "",
-        category:"",
-        title:"",
-        isComplete:true,
-        startDate:"",
-        startTime:"",
-        endDate:"",
-        endTime:""
-    }
+        category: "",
+        title: "",
+        isComplete: "",
+        startDate: "",
+        startTime: "",
+        endDate: "",
+        endTime: ""
+    },
+    cb: () => Router('/todo')
 }
 
 export const deleteToDo = {
-    type: 'TODO_DELETED',
+    type: types.TODO_DELETED,
     payload: {
         id: ""
-    }
+    },
+    cb: () => Router('/todo')
 }
 
 export const toggleStatus = {
-    type: 'TODO_TOGGLED',
+    type: types.TODO_TOGGLED,
     payload: {
         id: "",
-        isComplete = true
+        isComplete: false
     }
 }

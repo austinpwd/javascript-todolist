@@ -1,9 +1,3 @@
-import removeToDo from "../components/removeToDo";
-
-const removeToDoPage = function () {
-  const container = removeToDo();
-
-  return container;
-};
+import removeToDoPage from "../components/removeToDo";
 
 export default removeToDoPage;

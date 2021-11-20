@@ -1,31 +1,32 @@
-import { getStore, updateStore } from "..";
-import pageNotFound from "../../pages/pageNotFound";
+import * as actions from "../actionTypes"
+import {getStore, updateStore} from ".."
+import { Router } from "../../routes/router"
+import { update } from "lodash"
 
-function reducers ({state, action}){
+function reducers(action) {
     const state = getStore()
+    let modifiedState = null
+    let i = state.findIndex(todo => todo.id === action.payload.id)
 
-    switch(action.type){
-        case 'TODO_ADDED':
-            return [
-                ...state,
-                {
-                    id = uuidv4().substr(0,8),
-                    category = action.payload.category,
-                    title = action.payload.title,
-                    isComplete = action.payload.isComplete,
-                    startDate = action.payload.startDate,
-                    startTime = action.payload.startTime,
-                    endDate = action.payload.endDate,
-                    endTime = action.payload.endTime
-
-                }
-            ]
-        case 'TODO_EDITED':
-            return "remove employe with an id";
-        case 'TODO_DELETED':
-            return state.filter(todo => todo.id !== action.payload.id)
-        case 'TODO_TOGGLED':
-             return state.filter(todo => todo.id === action.payload.id)
+    switch(action.type) {
+        case actions.TODO_ADDED:
+            updateStore([...state, action.payload])
+            action.cb()
+            return actions.TODO_ADDED
+        case actions.TODO_EDITED:
+            modifiedState =  [...state.splice(i, 1, action.payload) ]
+            updateStore(modifiedState)
+            action.cb()
+            return actions.TODO_EDITED
+        case actions.TODO_DELETED:
+            modifiedState = [...state.slice(0, i), ...state.slice(i+1)]
+            updateStore(modifiedState);
+            action.cb()
+            return actions.TODO_DELETED
+        case actions.TODO_TOGGLED:
+             state.filter(todo => todo.id === action.payload.id) ? updateStore({...todo, isComplete: !todo.isComplete}) : todo
+             action.cb()
+             return actions.TODO_TOGGLED
         default:
             return state
     }
