@@ -7,39 +7,37 @@ import reducers from "../../redux/reducers";
 import { addToDo } from "../../redux/actions"; 
 import { Router } from "../../routes/router";
 
-const newFragment = document.createDocumentFragment();
-const addContainer = document.createElement("div");
-const pageHeader = document.createElement("header");
-const main = document.createElement(`main`);
-const buttonsContainer = document.createElement("div")
-const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
-const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
-const footer = document.createElement("footer");
-
-
-
-
 const addToDoContainer = function () {
+
+  const newFragment = document.createDocumentFragment();
+  const addContainer = document.createElement("div");
+  const pageHeader = document.createElement("header");
+  const main = document.createElement(`main`);
+  const buttonsContainer = document.createElement("div")
+  const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
+  const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
+  const footer = document.createElement("footer");
+
   addContainer.className = "todo-add";
 
-  pageHeader.appendChild(makeElement(header("h1", "Add")));
-  pageHeader.appendChild(brandingHeader());
+  pageHeader.append(makeElement(header("h1", "Add")));
+  pageHeader.append(brandingHeader());
 
-  main.appendChild(todoAdd())
+  main.append(todoAdd())
   
   buttonsContainer.className = "buttons"
   submitToDo.addEventListener("click", onClick_Add);
   cancelToDo.addEventListener("click", onClick_Cancel)
-  buttonsContainer.appendChild(submitToDo)
-  buttonsContainer.appendChild(cancelToDo)
+  buttonsContainer.append(submitToDo)
+  buttonsContainer.append(cancelToDo)
 
-  main.appendChild(buttonsContainer)
+  main.append(buttonsContainer)
 
-  addContainer.appendChild(pageHeader);
-  addContainer.appendChild(main);
-  addContainer.appendChild(footer);
+  addContainer.append(pageHeader);
+  addContainer.append(main);
+  addContainer.append(footer);
 
-  newFragment.appendChild(addContainer);
+  newFragment.append(addContainer);
 
   return newFragment;
 };

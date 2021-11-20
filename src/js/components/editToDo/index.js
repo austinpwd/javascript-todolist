@@ -6,37 +6,38 @@ import todoEdit from "../todos/todoForm/todoEdit";
 import { editToDo } from "../../redux/actions";
 import { Router } from "../../routes/router";
 
-const newFragment = document.createDocumentFragment();
-const editContainer = document.createElement("div");
-const pageHeader = document.createElement("header");
-const formContainer = document.createElement(`div`);
-const buttonsContainer = document.createElement("div")
-const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
-const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
-const footer = document.createElement("footer");
-
 
 const editToDoContainer = function (todo) {
+
+  const newFragment = document.createDocumentFragment();
+  const editContainer = document.createElement("div");
+  const pageHeader = document.createElement("header");
+  const formContainer = document.createElement(`div`);
+  const buttonsContainer = document.createElement("div")
+  const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
+  const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
+  const footer = document.createElement("footer");
+
   editContainer.className = "todo-edit";
 
-  pageHeader.appendChild(makeElement(header("h1", "Edit To Do")));
-  pageHeader.appendChild(brandingHeader());
+  pageHeader.append(makeElement(header("h1", "Edit To Do")));
+  pageHeader.append(brandingHeader());
 
  
   buttonsContainer.className = "buttons"
   submitToDo.addEventListener("click", onClick_Edit);
   cancelToDo.addEventListener("click", onClick_Cancel)
-  buttonsContainer.appendChild(submitToDo)
-  buttonsContainer.appendChild(cancelToDo)
+  buttonsContainer.append(submitToDo)
+  buttonsContainer.append(cancelToDo)
 
-  formContainer.appendChild(todoEdit(todo))
-  formContainer.appendChild(buttonsContainer)
+  formContainer.append(todoEdit(todo))
+  formContainer.append(buttonsContainer)
   
-  editContainer.appendChild(pageHeader);
-  editContainer.appendChild(formContainer);
-  editContainer.appendChild(footer);
+  editContainer.append(pageHeader);
+  editContainer.append(formContainer);
+  editContainer.append(footer);
 
-  newFragment.appendChild(editContainer);
+  newFragment.append(editContainer);
 
   return newFragment;
 };

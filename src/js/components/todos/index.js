@@ -6,19 +6,21 @@ import {todoItem} from "../todos/todoItem"
 import {getStore} from "../../redux";
 import {Router} from "../../routes/router";
 
-const newFragment = document.createDocumentFragment();
-
-const pageHeader = document.createElement("header");
-const main = document.createElement(`main`);
-const appBar = document.createElement("div");
-const todoData = document.createElement("ul");
-const footer = document.createElement("footer");
 
 const todos = function () {
+
+  const newFragment = document.createDocumentFragment();
+
+  const pageHeader = document.createElement("header");
+  const main = document.createElement(`main`);
+  const appBar = document.createElement("div");
+  const todoData = document.createElement("ul");
+  const footer = document.createElement("footer");
+
   appBar.className = "app-bar";
 
-  pageHeader.appendChild(makeElement(header("h1", "Current To-Do List")));
-  pageHeader.appendChild(brandingHeader());
+  pageHeader.append(makeElement(header("h1", "Current To-Do List")));
+  pageHeader.append(brandingHeader());
 
   const storedToDo = getStore()
   const clearContainer = clearToDos();
@@ -26,22 +28,22 @@ const todos = function () {
   addBtn.addEventListener("click", addToDo);
 
 
-  appBar.appendChild(addBtn);
+  appBar.append(addBtn);
   
-  main.appendChild(clearContainer);
-  main.appendChild(appBar);
+  main.append(clearContainer);
+  main.append(appBar);
 
-  newFragment.appendChild(pageHeader);
-  newFragment.appendChild(main);
-  newFragment.appendChild(footer);
-  todoList(storedToDo)
+  newFragment.append(pageHeader);
+  newFragment.append(main);
+  newFragment.append(footer);
+  todoList(storedToDo, todoData, main)
 
   return newFragment;
 };
 
 export default todos;
 
-function todoList(storedToDo) {
+function todoList(storedToDo, todoData, main) {
 
   if (storedToDo !== null) {
     const newToDoItems = storedToDo.map(todo => todoItem(todo));
@@ -50,9 +52,9 @@ function todoList(storedToDo) {
       todo.querySelector('.edit-icon').addEventListener('click', editToDo);
       todo.querySelector('.remove-icon').addEventListener('click', deleteToDo);
   
-      todoData.appendChild(todo);
+      todoData.append(todo);
     });
-    main.appendChild(todoData);
+    main.append(todoData);
     };
 }
 
@@ -63,8 +65,8 @@ const clearToDos = function () {
   container.className = "clear-todos";
   inProgress.textContent = `You have 3 Todos currently in progress`;
 
-  container.appendChild(inProgress);
-  container.appendChild(clearAllBtn);
+  container.append(inProgress);
+  container.append(clearAllBtn);
 
   return container;
 };

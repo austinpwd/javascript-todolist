@@ -7,20 +7,20 @@ import { deleteToDo } from "../../redux/actions";
 import { Router } from "../../routes/router";
 import reducers from "../../redux/reducers";
 
-const newFragment = document.createDocumentFragment();
-const pageHeader = document.createElement("header");
-const deleteContainer = document.createElement(`div`);
-const formContainer = document.createElement(`div`);
-const buttonsContainer = document.createElement("div")
-const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
-const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
-const footer = document.createElement("footer");
-
 
 const removeToDoContainer = function(todo) {
 
-  pageHeader.appendChild(makeElement(header("h1", "Delete To Do")));
-  pageHeader.appendChild(brandingHeader());
+  const newFragment = document.createDocumentFragment();
+  const pageHeader = document.createElement("header");
+  const deleteContainer = document.createElement(`div`);
+  const formContainer = document.createElement(`div`);
+  const buttonsContainer = document.createElement("div")
+  const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
+  const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
+  const footer = document.createElement("footer");
+
+  pageHeader.append(makeElement(header("h1", "Delete To Do")));
+  pageHeader.append(brandingHeader());
 
   function onClick_Remove(e) {
     e.preventDefault();
@@ -34,19 +34,19 @@ const removeToDoContainer = function(todo) {
   buttonsContainer.className = "buttons"
   submitToDo.addEventListener("click", onClick_Remove);
   cancelToDo.addEventListener("click", onClick_Cancel)
-  buttonsContainer.appendChild(submitToDo)
-  buttonsContainer.appendChild(cancelToDo)
+  buttonsContainer.append(submitToDo)
+  buttonsContainer.append(cancelToDo)
 
-  formContainer.appendChild(todoRemove(todo))
-  formContainer.appendChild(buttonsContainer)
+  formContainer.append(todoRemove(todo))
+  formContainer.append(buttonsContainer)
   
-  deleteContainer.appendChild(pageHeader);
-  deleteContainer.appendChild(formContainer);
-  deleteContainer.appendChild(footer);
+  deleteContainer.append(pageHeader);
+  deleteContainer.append(formContainer);
+  deleteContainer.append(footer);
 
-  newFragment.appendChild(pageHeader);
-  newFragment.appendChild(deleteContainer);
-  newFragment.appendChild(footer);
+  newFragment.append(pageHeader);
+  newFragment.append(deleteContainer);
+  newFragment.append(footer);
 
   return newFragment;
 };

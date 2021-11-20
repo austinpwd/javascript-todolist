@@ -10,17 +10,17 @@ const linkContainer = document.createElement(`div`);
 const footer = document.createElement(`footer`);
 
 const homePage = function () {
-  pageHeader.appendChild(makeElement(header()));
-  pageHeader.appendChild(brandingHeader());
+  pageHeader.append(makeElement(header()));
+  pageHeader.append(brandingHeader());
 
   linkContainer.className = "link-container";
-  linkContainer.appendChild(link("Go to To-Do List app", "/todo"));
+  linkContainer.append(link("Go to To-Do List app", "/todo"));
 
-  main.appendChild(linkContainer);
+  main.append(linkContainer);
 
-  newFragment.appendChild(pageHeader);
-  newFragment.appendChild(main);
-  newFragment.appendChild(footer);
+  newFragment.append(pageHeader);
+  newFragment.append(main);
+  newFragment.append(footer);
 
   return newFragment;
 };
