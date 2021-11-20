@@ -14,7 +14,7 @@ const addToDoContainer = function () {
   const pageHeader = document.createElement("header");
   const main = document.createElement(`main`);
   const buttonsContainer = document.createElement("div")
-  const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
+  const addToDo = button('Add', 'submit', 'add-todo', 'add-button')
   const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
   const footer = document.createElement("footer");
 
@@ -26,9 +26,9 @@ const addToDoContainer = function () {
   main.append(todoAdd())
   
   buttonsContainer.className = "buttons"
-  submitToDo.addEventListener("click", onClick_Add);
+  addToDo.addEventListener("click", onClick_Add);
   cancelToDo.addEventListener("click", onClick_Cancel)
-  buttonsContainer.append(submitToDo)
+  buttonsContainer.append(addToDo)
   buttonsContainer.append(cancelToDo)
 
   main.append(buttonsContainer)
@@ -46,14 +46,14 @@ const onClick_Add = function () {
   reducers({
     ...addToDo,
     payload: {
-      id: document.querySelector('#todoId').value,
+      id: document.querySelector('#id').value,
       category: document.querySelector('#category').value,
-      title: document.querySelector('#Title').value,
-      isComplete: document.querySelector('#Status').checked,
-      startDate: document.querySelector('#StartDate').value,
-      startTime: document.querySelector('#StartTime').value,
-      endDate: document.querySelector('#EndDate').value,
-      endTime: document.querySelector('#EndTime').value
+      title: document.querySelector('#title').value,
+      isComplete: document.querySelector('#complete').checked,
+      startDate: document.querySelector('#startdate').value,
+      startTime: document.querySelector('#starttime').value,
+      endDate: document.querySelector('#enddate').value,
+      endTime: document.querySelector('#endtime').value
     }})
   }
   

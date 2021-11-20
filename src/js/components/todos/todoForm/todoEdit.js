@@ -1,34 +1,34 @@
 import makeElement from "../../../utils/makeElement";
 
-const todoEdit = function ({id, category, title, isComplete, startDate, startTime, endDate, endTime}) {
+const todoEdit = function ({id, title, isComplete, startDate, startTime, endDate, endTime}) {
     return makeElement(`
     <form  id="editForm" class="form">
         <div class="flex-container uneven">
             <div>
-                <label for="todoID">ID</label>
-                <input type="text" id="todoID" name="todoID" readonly value=${id} required>
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" readonly value=${id} required>
             </div>
             <div>
                 <label for="Category">Category</label>
-                <select name="Category" id="category" required>
-                    <option value="">Select Category</option>
-                    <option value="work">Work</option>
-                    <option value="school">School</option>
-                    <option value="friends">Friends</option>
-                    <option value="family">Family</option>
-                    <option value="health">Health</option>
+                <select name="category" id="category" required>
+                    <option value="">Select A Category</option>
+                    <option value="Social">Social</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Health">Health</option>
+                    <option value="Philosophy">Philosophy</option>
                 </select>
             </div>
             <div>
-                <label for="Status">Complete</label>
-                <input type="checkbox" id="Status" name="Status" value="${isComplete}">
+                <label for="Complete">Complete</label>
+                <input type="checkbox" id="complete" name="complete" value="${isComplete}">
             </div>
         </div>
         
         <div class="flex-container large">
             <div>
-                <label for="Description">Task Description</label>
-                <input type="text" id="Description" name="Description" value="${title}" required>
+                <label for="Title">To Do Title</label>
+                <input type="text" id="title" name="title" value="${title}" required>
             </div>
             
         </div>
@@ -36,22 +36,22 @@ const todoEdit = function ({id, category, title, isComplete, startDate, startTim
         <div class="flex-container">
             <div>
                 <label for="StartDate">Start Date</label>
-                <input type="date" id="StartDate" name="StartDate" value=${startDate} required>
+                <input type="date" id="startdate" name="startdate" value=${startDate} required>
             </div>
             <div>
                 <label for="StartTime">Start Time</label>
-                <input type="time" id="StartTime" name="StartTime" value=${startTime} required>
+                <input type="time" id="starttime" name="starttime" value=${startTime} required>
             </div>
         </div>
 
         <div class="flex-container">
             <div>
                 <label for="EndDate">End Date</label>
-                <input type="date" id="EndDate" name="EndDate" value=${endDate} required>
+                <input type="date" id="enddate" name="enddate" value=${endDate} required>
             </div>
             <div>
                 <label for="EndTime">End Time</label>
-                <input type="time" id="EndTime" name="EndTime" value=${endTime} required>
+                <input type="time" id="endtime" name="endtime" value=${endTime} required>
             </div>
         </div>
 

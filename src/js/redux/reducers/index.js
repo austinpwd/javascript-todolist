@@ -14,7 +14,7 @@ function reducers(action) {
             action.cb()
             return actions.TODO_ADDED
         case actions.TODO_EDITED:
-            modifiedState =  [...state.splice(i, 1, action.payload) ]
+            modifiedState =  [...state.slice(0, i), Object.assign({}, state[i], action.payload), ...state.slice(i+1)];
             updateStore(modifiedState)
             action.cb()
             return actions.TODO_EDITED

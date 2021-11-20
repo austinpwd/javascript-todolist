@@ -10,30 +10,30 @@ const todoAdd = function() {
         <form class="form" id="add-form>
             <div class="flex-container uneven">
                 <div>
-                    <label for="todoId">ID</label>
-                    <input id="todoId" name="todoId" value=${newId} type="text" readonly required>
+                    <label for="id">ID</label>
+                    <input id="id" name="id" value=${newId} type="text" readonly required>
                 </div>
                 <div>
-                    <label for="category">Category</label>
+                    <label for="Category">Category</label>
                     <select name="category" id="category" required>
-                        <option value="">Select Category</option>
-                        <option value="work">Work</option>
-                        <option value="school">School</option>
-                        <option value="friends">Friends</option>
-                        <option value="family">Family</option>
-                        <option value="health">Health</option>
+                        <option value="">Select A Category</option>
+                        <option value="Social">Social</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Health">Health</option>
+                        <option value="Philosophy">Philosophy</option>
                     </select>
                 </div>
                 <div>
-                    <label for="Status">Completed</label>
-                    <input type="checkbox" id="Status" name="Status">
+                    <label for="complete">Completed</label>
+                    <input type="checkbox" id="complete" name="complete">
                 </div>
             </div>
             
             <div class="flex-container large">
                 <div>
                     <label for="Title">To Do Title</label>
-                    <input type="text" id="Title" name="Title" placeholder="Enter a Title for your To Do"  required>
+                    <input type="text" id="title" name="title" placeholder="Enter a Title for your To Do"  required>
                 </div>
                 
             </div>
@@ -41,22 +41,22 @@ const todoAdd = function() {
             <div class="flex-container">
                 <div>
                     <label for="StartDate">Start Date</label>
-                    <input type="date" id="StartDate" name="StartDate" placeholder="Start Date" required>
+                    <input type="date" id="startdate" name="startdate" placeholder="Start Date" required>
                 </div>
                 <div>
                     <label for="StartTime">Start Time</label>
-                    <input type="time" id="StartTime" name="StartTime" placeholder="Start Time" required>
+                    <input type="time" id="starttime" name="starttime" placeholder="Start Time" required>
                 </div>
             </div>
     
             <div class="flex-container">
                 <div>
                     <label for="EndDate">End Date</label>
-                    <input type="date" id="EndDate" name="EndDate" placeholder="End Date" required>
+                    <input type="date" id="enddate" name="enddate" placeholder="End Date" required>
                 </div>
                 <div>
                     <label for="EndTime">End Time</label>
-                    <input type="time" id="EndTime" name="EndTime" placeholder="End Time" required>
+                    <input type="time" id="endtime" name="endtime" placeholder="End Time" required>
                 </div>
             </div>
 

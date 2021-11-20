@@ -8,7 +8,7 @@ const todoRemove = function({id, category, title, isComplete, startDate, startTi
     <p class="category"><b>Category</b>: ${category}</p>
     <p class="time"><b>Time</b>: ${startTime} - ${endTime}</p>
     <p class="date"><b>Due</b>: ${endDate}</p>
-    <p class="is-completed"><b>Status</b>: ${
+    <p class="complete"><b>Complete</b>: ${
       isComplete
         ? `Completed <i class="fas fa-check-square fa-2x"></i>`
         : `In Progress <i class="fas fa-spinner fa-2x"></i>`}</p>

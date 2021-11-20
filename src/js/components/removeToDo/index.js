@@ -12,10 +12,10 @@ const removeToDoContainer = function(todo) {
 
   const newFragment = document.createDocumentFragment();
   const pageHeader = document.createElement("header");
+  const main = document.createElement(`main`);
   const deleteContainer = document.createElement(`div`);
-  const formContainer = document.createElement(`div`);
   const buttonsContainer = document.createElement("div")
-  const submitToDo = button('Submit', 'submit', 'submit-todo', 'submit-button')
+  const removeToDo = button('Remove', 'submit', 'remove-todo', 'remove-button')
   const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
   const footer = document.createElement("footer");
 
@@ -32,21 +32,19 @@ const removeToDoContainer = function(todo) {
         }
 
   buttonsContainer.className = "buttons"
-  submitToDo.addEventListener("click", onClick_Remove);
+  removeToDo.addEventListener("click", onClick_Remove);
   cancelToDo.addEventListener("click", onClick_Cancel)
-  buttonsContainer.append(submitToDo)
+  buttonsContainer.append(removeToDo)
   buttonsContainer.append(cancelToDo)
 
-  formContainer.append(todoRemove(todo))
-  formContainer.append(buttonsContainer)
+  main.append(todoRemove(todo))
+  main.append(buttonsContainer)
   
   deleteContainer.append(pageHeader);
-  deleteContainer.append(formContainer);
+  deleteContainer.append(main);
   deleteContainer.append(footer);
 
-  newFragment.append(pageHeader);
   newFragment.append(deleteContainer);
-  newFragment.append(footer);
 
   return newFragment;
 };
