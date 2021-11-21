@@ -1,6 +1,7 @@
 import makeElement from "../../utils/makeElement";
 import button from "../ui/button";
 import header from "../ui/header";
+import tagline from "../ui/tagline";
 import brandingHeader from "../brandingHeader";
 import todoAdd from "../todos/todoForm/todoAdd";
 import reducers from "../../redux/reducers";
@@ -10,19 +11,25 @@ import { Router } from "../../routes/router";
 const addToDoContainer = function () {
 
   const newFragment = document.createDocumentFragment();
-  const addContainer = document.createElement("div");
   const pageHeader = document.createElement("header");
   const main = document.createElement(`main`);
+  const h2 = document.createElement('h2');
+  const layoutContainer = document.createElement("div");
   const buttonsContainer = document.createElement("div")
   const addToDo = button('Add', 'submit', 'add-todo', 'add-button')
   const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
   const footer = document.createElement("footer");
 
-  addContainer.className = "todo-add";
+  layoutContainer.className = "container"
+  main.className = "container__todos"
+  h2.textContent = "Add To Do Item"
 
-  pageHeader.append(makeElement(header("h1", "Add")));
   pageHeader.append(brandingHeader());
+  const title = pageHeader.querySelector('.container__headings');
+  title.append(makeElement(header("span", "container__headings--title", "Austin's To Dos")));
+  title.append(makeElement(tagline()));
 
+  main.append(h2)
   main.append(todoAdd())
   
   buttonsContainer.className = "buttons"
@@ -33,11 +40,11 @@ const addToDoContainer = function () {
 
   main.append(buttonsContainer)
 
-  addContainer.append(pageHeader);
-  addContainer.append(main);
-  addContainer.append(footer);
+  layoutContainer.append(pageHeader);
+  layoutContainer.append(main);
+  layoutContainer.append(footer);
 
-  newFragment.append(addContainer);
+  newFragment.append(layoutContainer);
 
   return newFragment;
 };

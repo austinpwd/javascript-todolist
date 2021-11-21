@@ -2,6 +2,7 @@ import makeElement from "../../utils/makeElement";
 import button from "../ui/button";
 import header from "../ui/header";
 import brandingHeader from "../brandingHeader";
+import tagline from "../ui/tagline";
 import todoEdit from "../todos/todoForm/todoEdit";
 import reducers from "../../redux/reducers";
 import { editToDo } from "../../redux/actions";
@@ -11,18 +12,23 @@ import { Router } from "../../routes/router";
 const editToDoContainer = function (todo) {
 
   const newFragment = document.createDocumentFragment();
-  const editContainer = document.createElement("div");
+  const layoutContainer = document.createElement(`div`);
   const pageHeader = document.createElement("header");
   const main = document.createElement(`main`);
+  const h2 = document.createElement('h2');
   const buttonsContainer = document.createElement("div")
   const editToDo = button('Edit', 'submit', 'edit-todo', 'edit-button')
   const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
   const footer = document.createElement("footer");
 
-  editContainer.className = "todo-edit";
+  layoutContainer.className = "container"
+  main.className = "container__todos"
+  h2.textContent = "Edit To Do Item"
 
-  pageHeader.append(makeElement(header("h1", "Edit To Do")));
   pageHeader.append(brandingHeader());
+  const title = pageHeader.querySelector('.container__headings');
+  title.append(makeElement(header("span", "container__headings--title", "Austin's To Dos")));
+  title.append(makeElement(tagline()));
 
  
   buttonsContainer.className = "buttons"
@@ -35,14 +41,15 @@ const editToDoContainer = function (todo) {
   todoContainer.querySelector('#category').value = todo.category;
   todoContainer.querySelector('#complete').checked = todo.isComplete;
 
+  main.append(h2)
   main.append(todoContainer)
   main.append(buttonsContainer)
   
-  editContainer.append(pageHeader);
-  editContainer.append(main);
-  editContainer.append(footer);
+  layoutContainer.append(pageHeader);
+  layoutContainer.append(main);
+  layoutContainer.append(footer);
 
-  newFragment.append(editContainer);
+  newFragment.append(layoutContainer);
 
   return newFragment;
 };

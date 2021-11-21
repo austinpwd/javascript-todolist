@@ -1,6 +1,7 @@
 import makeElement from "../../utils/makeElement";
 import button from "../ui/button";
 import header from "../ui/header";
+import tagline from "../ui/tagline";
 import brandingHeader from "../brandingHeader";
 import todoRemove from "../todos/todoForm/todoRemove";
 import { deleteToDo } from "../../redux/actions";
@@ -13,14 +14,22 @@ const removeToDoContainer = function(todo) {
   const newFragment = document.createDocumentFragment();
   const pageHeader = document.createElement("header");
   const main = document.createElement(`main`);
-  const deleteContainer = document.createElement(`div`);
+  const h2 = document.createElement('h2');
+  const layoutContainer = document.createElement("div")
   const buttonsContainer = document.createElement("div")
   const removeToDo = button('Remove', 'submit', 'remove-todo', 'remove-button')
   const cancelToDo = button('Cancel', 'cancel', 'cancel-todo', 'cancel-button')
   const footer = document.createElement("footer");
 
-  pageHeader.append(makeElement(header("h1", "Delete To Do")));
+  layoutContainer.className = "container"
+  main.className = "container__todos"
+  h2.textContent = "Remove To Do Item"
+
   pageHeader.append(brandingHeader());
+  const title = pageHeader.querySelector('.container__headings');
+  title.append(makeElement(header("span", "container__headings--title", "Austin's To Dos")));
+  title.append(makeElement(tagline()));
+
 
   function onClick_Remove(e) {
     e.preventDefault();
@@ -37,14 +46,15 @@ const removeToDoContainer = function(todo) {
   buttonsContainer.append(removeToDo)
   buttonsContainer.append(cancelToDo)
 
+  main.append(h2)
   main.append(todoRemove(todo))
   main.append(buttonsContainer)
   
-  deleteContainer.append(pageHeader);
-  deleteContainer.append(main);
-  deleteContainer.append(footer);
+  layoutContainer.append(pageHeader);
+  layoutContainer.append(main);
+  layoutContainer.append(footer);
 
-  newFragment.append(deleteContainer);
+  newFragment.append(layoutContainer);
 
   return newFragment;
 };

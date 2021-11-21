@@ -1,5 +1,5 @@
 const tagline = function (
-  tagline = "To Do List 2.0 - New and Improved!",
+  tagline = "Always improving!",
   className = "container__headings--tagline"
 ) {
   const element = `<span class="${className}">${tagline}</span>`;

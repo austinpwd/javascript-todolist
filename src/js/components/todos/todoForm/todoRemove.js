@@ -1,19 +1,44 @@
 import makeElement from "../../../utils/makeElement"
-import header from "../../ui/header"
 
 const todoRemove = function({id, category, title, isComplete, startDate, startTime, endDate, endTime}) {
     return makeElement(`
     <div class="container__todo" data-key="${id}">
+    <div class="flex-one">
+    <img src="${categoryImage(category)}" alt="${category}" class="container__category">
     <span class="container__title">${title}</span>
-    <p class="category"><b>Category</b>: ${category}</p>
-    <p class="time"><b>Time</b>: ${startTime} - ${endTime}</p>
-    <p class="date"><b>Due</b>: ${endDate}</p>
-    <p class="complete"><b>Complete</b>: ${
+    </div>
+    <div class="flex-two">
+    <span class="category">${category}</span>
+    <span class="complete">${
       isComplete
-        ? `Completed <i class="fas fa-check-square"></i>`
-        : `In Progress <i class="fas fa-spinner"></i>`}</p>
-  </div`
+        ? `   <i class="fas fa-check-square fa-3x"></i>`
+        : `   <i class="fas fa-spinner fa-3x"></i>`
+    }</span>
+    </div>
+    <div class="flex-three">
+    <div class="container__details">
+    <span class="time"><b>Time</b>: ${startTime} - ${endTime}</span>
+    <span class="date"><b>Due</b>: ${endDate}</span>
+    </div>
+</div>`
   )
 }
 
 export default todoRemove
+
+const categoryImage = (category) => {
+  switch (category) {
+    case "Social":
+      return "img/social.webp";
+    case "Work":
+      return "img/work.webp";
+    case "Health":
+      return "img/health.webp";
+    case "School":
+      return "img/school.webp";
+    case "Home":
+      return "img/home.webp";
+    default:
+      return "img/philosophy.webp";
+  }
+}
