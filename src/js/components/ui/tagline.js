@@ -1,8 +1,8 @@
 const tagline = function (
-  tagline = "It's very simple — you read the protocol and write the code.",
-  className = "ui-tagline"
+  tagline = "To Do List 2.0 - New and Improved!",
+  className = "container__headings--tagline"
 ) {
-  const element = `<h2 class="${className}"><em>"${tagline}"</em></h2>`;
+  const element = `<span class="${className}">${tagline}</span>`;
   return element;
 };
 

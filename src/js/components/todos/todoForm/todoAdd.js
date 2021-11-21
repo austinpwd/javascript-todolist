@@ -2,7 +2,7 @@ import makeElement from "../../../utils/makeElement";
 import {v4} from "uuid";
 
 
-const newId = v4().substr(0,8);
+const id = v4().substr(0,8);
 
 
 const todoAdd = function() {
@@ -11,7 +11,7 @@ const todoAdd = function() {
             <div class="flex-container uneven">
                 <div>
                     <label for="id">ID</label>
-                    <input id="id" name="id" value=${newId} type="text" readonly required>
+                    <input id="id" name="id" value=${id} type="text" readonly required>
                 </div>
                 <div>
                     <label for="Category">Category</label>

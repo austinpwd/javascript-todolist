@@ -4,59 +4,59 @@
       "category":"Social",
       "title":"Stand outside and look directly at the sun.",
       "isComplete":true,
-      "startDate":"Tuesday, 15 June 2021",
-      "startTime":"9:00am",
-      "endDate":"Tuesday, 15 June 2021",
-      "endTime":"12:00am"
+      "startDate":"2021-06-15",
+      "startTime":"09:00",
+      "endDate":"2021-06-15",
+      "endTime":"12:00"
    },
    {
       "id":"D00D2BAD",
       "category":"Work",
       "title":"Pretend to work so the people around you do not get angry.",
       "isComplete":false,
-      "startDate":"Thursday, 9 November 1995",
-      "startTime":"8:00am",
-      "endDate":"TBD",
-      "endTime":"TBD"
+      "startDate":"1995-11-09",
+      "startTime":"08:00",
+      "endDate":"2100-11-09",
+      "endTime":"08:00"
    },
    {
       "id":"FEE1DEAD",
       "category":"Health",
       "title":"Try to be more healthy",
       "isComplete":true,
-      "startDate":"Thursday, 05 Aug 2021",
-      "startTime":"7:00am",
-      "endDate":"Thursday, 05 Aug 2021",
-      "endTime":"7:02am"
+      "startDate":"2021-08-05",
+      "startTime":"07:00",
+      "endDate":"2021-08-05",
+      "endTime":"07:02"
    },
    {
       "id":"BADDCAFE",
       "category":"School",
       "title":"Keep GPA above 3.7 and complete the program with Honors (Honors don't really matter)",
       "isComplete":false,
-      "startDate":"Tuesday, 09 Feb 2021",
-      "startTime":"9:00am",
-      "endDate":"Wednesday, 10 Feb 2021",
-      "endTime":"1:00pm"
+      "startDate":"2021-02-10",
+      "startTime":"09:00",
+      "endDate":"2021-02-10",
+      "endTime":"01:00"
    },
    {
       "id":"DEAD10CC",
       "category":"Home",
       "title":"Stare at a wall until you are asked to do something",
       "isComplete":true,
-      "startDate":"Friday, 17 Dec 2021",
-      "startTime":"3:00pm",
-      "endDate":"Saturday, 18 Dec 2021",
-      "endTime":"6:00am"
+      "startDate":"2021-12-17",
+      "startTime":"03:00",
+      "endDate":"2021-12-18",
+      "endTime":"06:00"
    },
    {
       "id":"DEADFA11",
       "category":"Philosophy",
       "title":"Try not to have an existential crisis",
       "isComplete":false,
-      "startDate":"Sunday, 19 Sep 2021",
-      "startTime":"12:00am",
-      "endDate":"Sunday, 19 Sep 2099",
-      "endTime":"12:00am"
+      "startDate":"2021-09-19",
+      "startTime":"12:00",
+      "endDate":"2099-09-19",
+      "endTime":"12:00"
    }
 ]

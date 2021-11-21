@@ -23,10 +23,6 @@ function reducers(action) {
             updateStore(modifiedState);
             action.cb()
             return actions.TODO_DELETED
-        case actions.TODO_TOGGLED:
-             state.filter(todo => todo.id === action.payload.id) ? updateStore({...todo, isComplete: !todo.isComplete}) : todo
-             action.cb()
-             return actions.TODO_TOGGLED
         default:
             return state
     }

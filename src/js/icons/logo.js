@@ -1,8 +1,6 @@
 const logo = function () {
   return `
-    <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve" class="container__logo">
 <g id="XMLID_1_">
 	<path id="XMLID_5_" d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M256,494.75
 		C124.14,494.75,17.25,387.86,17.25,256S124.14,17.25,256,17.25S494.75,124.14,494.75,256S387.86,494.75,256,494.75z"/>

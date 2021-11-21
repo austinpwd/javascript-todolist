@@ -40,11 +40,3 @@ export const deleteToDo = {
     },
     cb: () => Router('/todo')
 }
-
-export const toggleStatus = {
-    type: types.TODO_TOGGLED,
-    payload: {
-        id: "",
-        isComplete: false
-    }
-}
