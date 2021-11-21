@@ -7,11 +7,15 @@ const todoEdit = function ({id, title, isComplete, startDate, startTime, endDate
         <p class="error"></p>
     </div>
             <div>
-                <label for="id">ID</label>
-                <input type="text" id="id" name="id" readonly value=${id} required>
+            <label for="ID">ID:</label>
+                <input type="text" id="id" name="id" readonly value=${id}>
             </div>
             <div>
-                <label for="Category">Category</label>
+                <label for="Title">Title:</label>
+                <input type="text" id="title" name="title" value="${title}" required>
+            </div>
+            <div>
+                <label for="Category">Category:</label>
                 <select name="category" id="category" required>
                     <option value="">Select A Category</option>
                     <option value="Social">Social</option>
@@ -21,34 +25,29 @@ const todoEdit = function ({id, title, isComplete, startDate, startTime, endDate
                     <option value="Philosophy">Philosophy</option>
                 </select>
             </div>
-            <div>
-                <label for="Complete">Complete</label>
-                <input type="checkbox" id="complete" name="complete" value="${isComplete}">
-            </div>
-        
-            <div>
-                <label for="Title">To Do Title</label>
-                <input type="text" id="title" name="title" value="${title}" required>
-            </div>
-            
 
             <div>
-                <label for="StartDate">Start Date</label>
+                <label for="StartDate">Start Date:</label>
                 <input type="date" id="startdate" name="startdate" value=${startDate} required>
             </div>
             <div>
-                <label for="StartTime">Start Time</label>
+                <label for="StartTime">Start Time:</label>
                 <input type="time" id="starttime" name="starttime" value=${startTime} required>
             </div>
 
             <div>
-                <label for="EndDate">End Date</label>
+                <label for="EndDate">End Date:</label>
                 <input type="date" id="enddate" name="enddate" value=${endDate} required>
             </div>
             </div>
-                <label for="EndTime">End Time</label>
+                <label for="EndTime">End Time:</label>
                 <input type="time" id="endtime" name="endtime" value=${endTime} required>
             </div>
+
+            <div>
+            <label for="Complete">Complete:</label>
+            <input type="checkbox" id="complete" name="complete" value="${isComplete}">
+        </div>
     </form>
     `
     )

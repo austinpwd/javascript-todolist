@@ -167,18 +167,72 @@ body {
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
 }
 
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 a {
+  color: goldenrod;
+}
+a, #add-icon, button {
+  cursor: pointer;
+  user-select: none;
+  outline: none;
   text-decoration: none;
+  border: none;
+}
+button {
+  font-size: large;
+  color: whitesmoke;
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+button:hover {
+  background: #eaeaea;
+}
+button:active {
+  opacity: 1;
+}
+
+.add-button {
+  background: green;
+}
+
+.add-button:hover {
+  color: green;
+}
+
+
+.edit-button {
+  background: blue;
+}
+
+.edit-button:hover {
+  color: blue;
+}
+
+.remove-button {
+  background: red;
+}
+
+.remove-button:hover {
+  color: red;
+}
+
+.cancel-button {
+  background: darkcyan;
+}
+
+.cancel-button:hover {
+  color: darkcyan;
 }
 
 h2 {
     text-align: center;
 }
-.counter {
-  font-style: italic;
-  color: darkviolet;
-  text-decoration: underline;
-}
+
 .fa-check-square {
   color: green;
 }
