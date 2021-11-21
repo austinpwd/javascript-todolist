@@ -35,7 +35,7 @@ const todoAdd = function() {
            
                 <div>
                     <label for="Title">To Do Title</label>
-                    <input type="text" id="title" name="title" placeholder="Enter a Title for your To Do"  required>
+                    <input type="text" id="title" name="title" placeholder="Enter a Title"  required>
                 </div>
 
     
