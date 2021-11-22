@@ -53,7 +53,7 @@ const onClick_Add = function () {
   reducers({
     ...addToDo,
     payload: {
-      id: document.querySelector('#id').value,
+      id: document.querySelector('#id').textContent,
       category: document.querySelector('#category').value,
       title: document.querySelector('#title').value,
       isComplete: document.querySelector('#complete').checked,
