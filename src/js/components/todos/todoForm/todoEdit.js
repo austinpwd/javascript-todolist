@@ -11,7 +11,7 @@ const todoEdit = function ({
 }) {
   return makeElement(`
     <form action="submit" method="GET">
-    <div class="container__todo">
+    <div class="container__todo__form">
               <div>
               <label class="container__title">ID: <span id="id">${id}</span></label>
               </div>

@@ -2,7 +2,7 @@ import makeElement from "../../../utils/makeElement"
 
 const todoRemove = function({id, category, title, isComplete, startDate, startTime, endDate, endTime}) {
     return makeElement(`
-    <div class="container__todo" data-key="${id}">
+    <div class="container__todo__form" data-key="${id}">
     <div class="flex-one">
     <img src="${categoryImage(category)}" alt="${category}" class="container__category">
     <span class="container__title">${title}</span>

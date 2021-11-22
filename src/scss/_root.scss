@@ -172,8 +172,18 @@ body {
   flex-flow: row nowrap;
 }
 
-form .container__todo > div {
+form .container__todo__form > div {
   margin-bottom: 1rem;
+}
+
+.container__todo__form  {
+  align-items: center;
+  padding: 10px 30px 10px 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+  background-color: #fff;
+
 }
 .form-container div:nth-child(2) {
  
@@ -191,26 +201,14 @@ form .container__todo > div {
 
 .form-container-two, .form-container-three {
   display: flex;
-  flex-flow: row nowrap;
+ 
   
 }
 
-.form-container-two > div, .form-container-three > div {
-  display: flex;
-  align-items: center;
-}
 
-.form-container-two div:nth-child(2), .form-container-three div:nth-child(2) {
-  margin-left: -2rem;
+.form-container-two input, .form-container-three input {
+  margin-left: 4rem;
 }
-.form-container-two #startdate, .form-container-three #enddate {
-  width: 71%;
-}
-
-.form-container-two #starttime, .form-container-three #endtime {
-  width: 75%;
-}
-
 
 .buttons {
   display: flex;
